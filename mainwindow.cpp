@@ -169,6 +169,8 @@ void MainWindow::ShowContextMenu(const QPoint &pos) // this is a slot
   }
   
   else if (selectedItem->text() == "hbogo.pl") {
+    QString UserAgent = "Mozilla/5.0 (X11; CrOS armv7l 6946.86.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.91 Safari/537.36";
+    this->webview->page()->profile()->setHttpUserAgent(UserAgent);
     webview->setUrl(QUrl(QStringLiteral("https://hbogo.pl")));
   }
 
