@@ -146,6 +146,7 @@ void MainWindow::ShowContextMenu(const QPoint &pos) // this is a slot
   myMenu.addAction("Hulu");
   myMenu.addAction("CrunchyRoll");
   myMenu.addAction("HBO");
+  myMenu.addAction("hbogo.pl");
 
   QAction *selectedItem = myMenu.exec(globalPos);
   if (selectedItem == NULL) {
@@ -165,6 +166,10 @@ void MainWindow::ShowContextMenu(const QPoint &pos) // this is a slot
 
   else if (selectedItem->text() == "HBO") {
     webview->setUrl(QUrl(QStringLiteral("https://hbo.com")));
+  }
+  
+  else if (selectedItem->text() == "hbogo.pl") {
+    webview->setUrl(QUrl(QStringLiteral("https://hbogo.pl")));
   }
 
   else if (selectedItem->text() == "Netflix") {
